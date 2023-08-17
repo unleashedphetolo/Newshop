@@ -12,6 +12,7 @@ import {
   SHOP_ERROR,
   GET_ORDERS,
   GET_POSTS,
+  SET_PRODUCT,
 } from '../types'
 import { db } from '../../firebase/config'
 import ShopReducer from './shopReducer'
@@ -22,6 +23,7 @@ const ShopState = ({ children }) => {
   const initialState = {
     errors: null,
     products: null,
+    product: null,
     posts: null,
     orders: null,
     loading: false,
@@ -102,6 +104,11 @@ const ShopState = ({ children }) => {
     }
   }
 
+  const setProduct = (product) => {
+    setProductsLoading()
+    dispatch({ type: SET_PRODUCT, payload: product })
+  }
+
   // Set Loading
   const setProductsLoading = () => dispatch({ type: PRODUCTS_LOADING })
   const setOrderLoading = () => dispatch({ type: ORDER_LOADING })
@@ -111,6 +118,7 @@ const ShopState = ({ children }) => {
       value={{
         errors: state.errors,
         products: state.products,
+        product: state.product,
         posts: state.posts,
         orders: state.orders,
         loading: state.loading,
@@ -125,6 +133,7 @@ const ShopState = ({ children }) => {
         addOrder,
         getOrders,
         getPosts,
+        setProduct,
       }}
     >
       {children}

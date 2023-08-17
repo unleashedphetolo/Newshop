@@ -21,10 +21,9 @@ import PaymentSuccess from './pages/PaymentSuccess'
 import PaymentFailed from './pages/PaymentFailed'
 import Loading from './components/Loading'
 import Logo from './assets/logo2.png'
-import '../src/styles/App.css';
+import '../src/styles/App.css'
 
-import ProductDetailsPage from './pages/ProductDetailsPage'; // Make sure to provide the correct path to your component
-
+import ProductDetailsPage from './pages/ProductDetailsPage' // Make sure to provide the correct path to your component
 
 function App() {
   const { setUser, logout, user, userLoading, dispatch } =
@@ -47,7 +46,7 @@ function App() {
   return (
     <div className='App'>
       <ToastContainer hideProgressBar />
-      <Navbar expand='lg' >
+      <Navbar expand='lg'>
         <Container>
           <Link className='navbar-brand' to='/'>
             <img src={Logo} alt='logo' width={85} />
@@ -79,28 +78,27 @@ function App() {
               </Link>
             </Nav>
             <Nav>
-
-            <button
-      style={{
-        marginTop: '12px',
-        my: '2px',
-        mx: '1px',
-        display: 'block',
-        fontWeight: 'bold',
-        backgroundColor: '#76ae36', // Set the background color to bright green
-        color: 'black', // Set the text color to black
-        padding: '10px 20px',
-        border: 'none',
-        borderRadius: '5px',
-        cursor: 'pointer',
-        height: '40px', // Add height to the button
-        width: '300px', // Add width to the button
-      }}
-    >
-      HMP ENGINEERING SOLUTIONS
-    </button>
+              <button
+                style={{
+                  marginTop: '12px',
+                  my: '2px',
+                  mx: '1px',
+                  display: 'block',
+                  fontWeight: 'bold',
+                  backgroundColor: '#76ae36', // Set the background color to bright green
+                  color: 'black', // Set the text color to black
+                  padding: '10px 20px',
+                  border: 'none',
+                  borderRadius: '5px',
+                  cursor: 'pointer',
+                  height: '40px', // Add height to the button
+                  width: '300px', // Add width to the button
+                }}
+              >
+                HMP ENGINEERING SOLUTIONS
+              </button>
               <Link className='nav-link d-flex align-items-center' to='/cart'>
-                <ion-icon name='cart'></ion-icon>({cart.length})
+                <ion-icon name='cart'></ion-icon>({cart?.length})
               </Link>
 
               {user ? (
@@ -153,7 +151,6 @@ function App() {
         <Route path='register' element={<Register />} />
         <Route path='done' element={<PaymentSuccess />} />
         <Route path='fail' element={<PaymentFailed />} />
-    
         <Route path='product/:id' element={<ProductDetailsPage />} />
       </Routes>
 
@@ -171,16 +168,28 @@ function App() {
             </Col>
             <Col md={4}>
               <div className='d-flex align-items-center justify-content-center'>
-                <a style={{ color: 'white', margin: '0 5px' }} href='https://www.linkedin.com/company/hmpengineering'>
+                <a
+                  style={{ color: 'white', margin: '0 5px' }}
+                  href='https://www.linkedin.com/company/hmpengineering'
+                >
                   <ion-icon name='logo-linkedin'></ion-icon>
                 </a>
-                <a style={{ color: 'white', margin: '0 5px' }} href='https://www.facebook.com/111023744597208'>
+                <a
+                  style={{ color: 'white', margin: '0 5px' }}
+                  href='https://www.facebook.com/111023744597208'
+                >
                   <ion-icon name='logo-facebook'></ion-icon>
                 </a>
-                <a style={{ color: 'white', margin: '0 5px' }} href='https://www.twitter.com/hmp_engineering'>
+                <a
+                  style={{ color: 'white', margin: '0 5px' }}
+                  href='https://www.twitter.com/hmp_engineering'
+                >
                   <ion-icon name='logo-twitter'></ion-icon>
                 </a>
-                <a style={{ color: 'white', margin: '0 5px' }} href='https://www.instagram.com/hmpengineering'>
+                <a
+                  style={{ color: 'white', margin: '0 5px' }}
+                  href='https://www.instagram.com/hmpengineering'
+                >
                   <ion-icon name='logo-instagram'></ion-icon>
                 </a>
               </div>

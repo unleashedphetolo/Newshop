@@ -10,6 +10,7 @@ import {
   SHOP_ERROR,
   GET_ORDERS,
   GET_POSTS,
+  SET_PRODUCT,
 } from '../types'
 
 export default (state, action) => {
@@ -86,7 +87,11 @@ export default (state, action) => {
         loading: false,
         orderLoading: false,
       }
-
+    case SET_PRODUCT:
+      return {
+        loading: false,
+        product: action.payload,
+      }
     default:
       return state
   }
