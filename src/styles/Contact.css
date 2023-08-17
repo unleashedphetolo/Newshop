@@ -1,0 +1,64 @@
+/* Contact.css */
+
+/* Styles for the Contact component */
+.contact-container {
+  min-height: 75vh;
+  padding: 40px 0;
+}
+
+.contact-heading {
+  font-family: "Arial", sans-serif;
+  margin-top: 30px;
+  font-size: 36px;
+  text-align: center;
+  font-weight: bolder; /* Font weight set to bold */
+  color: green; /* Font color set to green */
+}
+
+.contact-image {
+  width: 100%;
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+}
+
+.contact-info {
+  margin-top: 60px;
+}
+
+.contact-info h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #20a046; /* Font color set to black */
+}
+
+.contact-info h4 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #000; /* Font color set to black */
+}
+
+.contact-info p {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #000; /* Font color set to black */
+}
+
+.contact-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #1ae253;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.contact-btn:hover {
+  background-color: #b9c1c9;
+}
