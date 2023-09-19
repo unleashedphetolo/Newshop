@@ -69,9 +69,9 @@ const Checkout = () => {
   const params = new URLSearchParams({
     merchant_id: '10021039',
     merchant_key: 'm3qwcrntrzihw',
-    return_url: 'http://hmpengineeringsolutions.co.za/done',
-    cancel_url: 'http://hmpengineeringsolutions.co.za/fail',
-    notify_url: 'http://hmpengineeringsolutions.co.za/',
+    return_url: 'http://hmpengineering.co.za/done',
+    cancel_url: 'http://hmpengineering.co.za/fail',
+    notify_url: 'http://hmpengineering.co.za/',
     name_first: user.name,
     name_last: 'Doe',
     email_address: user.email,
