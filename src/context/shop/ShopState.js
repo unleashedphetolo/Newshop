@@ -3,6 +3,7 @@ import ShopContext from './shopContext'
 import {
   PRODUCTS_LOADING,
   GET_PRODUCTS,
+  GET_PRODUCT,
   ADD_TO_CART,
   INCREMENT_QTY,
   DECREMENT_QTY,
@@ -16,7 +17,7 @@ import {
 } from '../types'
 import { db } from '../../firebase/config'
 import ShopReducer from './shopReducer'
-import { addDoc, collection, getDocs, query, where } from 'firebase/firestore'
+import { addDoc, collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore'
 import { toast } from 'react-toastify'
 
 const ShopState = ({ children }) => {
@@ -108,6 +109,23 @@ const ShopState = ({ children }) => {
     setProductsLoading()
     dispatch({ type: SET_PRODUCT, payload: product })
   }
+// Today
+const getProduct = async(id) =>{
+  
+  setProductsLoading();
+  try{
+    const docRef = doc(db,"products",id);
+    const docSnap = await getDoc(docRef);
+    if(docSnap.exists()){
+      dispatch({type:GET_PRODUCT,payload:{id,...docSnap.data()}});
+    }
+  }catch(error){
+    dispatch({type: SHOP_ERROR,payload:error});
+    console.log(error);
+  }
+};
+  
+
 
   // Set Loading
   const setProductsLoading = () => dispatch({ type: PRODUCTS_LOADING })
@@ -134,6 +152,7 @@ const ShopState = ({ children }) => {
         getOrders,
         getPosts,
         setProduct,
+        getProduct
       }}
     >
       {children}

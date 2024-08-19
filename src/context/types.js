@@ -20,3 +20,5 @@ export const SHOP_ERROR = 'SHOP_ERROR'
 export const GET_ORDERS = 'GET_ORDERS'
 export const GET_POSTS = 'GET_POSTS'
 export const SET_PRODUCT = 'SET_PRODUCT'
+export const GET_PRODUCT = 'GET_PRODUCT'
+

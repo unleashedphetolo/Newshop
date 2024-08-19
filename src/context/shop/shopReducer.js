@@ -1,6 +1,7 @@
 import {
   PRODUCTS_LOADING,
   GET_PRODUCTS,
+  GET_PRODUCT,
   ADD_TO_CART,
   INCREMENT_QTY,
   DECREMENT_QTY,
@@ -80,13 +81,21 @@ export default (state, action) => {
         ...state,
         cart: state.cart.filter((product) => product.id !== action.payload),
       }
-
+    
     case SHOP_ERROR:
       return {
         ...state,
         loading: false,
         orderLoading: false,
       }
+
+      case GET_PRODUCT:
+        return {
+          ...state,
+          loading: false,
+          product: action.payload,
+        };
+
     case SET_PRODUCT:
       return {
         loading: false,
